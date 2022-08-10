@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ShopeeController;
 use App\Http\Controllers\TokopediaDpsController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,20 @@ use App\Http\Controllers\TokopediaDpsController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/images', function () {
+    return view('image.index');
+});
+
+
+
+
+
+
+Route::post('/images/import', [ProductController::class, 'store']);
+Route::get('/images/show', [ProductController::class, 'index']);
+Route::get('/images/cari', [ProductController::class, 'cari']);
+
 Route::post('/shopee/update_stok', [ShopeeController::class, 'update_stok']);
 Route::post('/shopee/variasi_baru', [ShopeeController::class, 'variasi_baru']);
 Route::post('/shopee/produk_baru', [ShopeeController::class, 'produk_baru']);
