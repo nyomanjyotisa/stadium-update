@@ -40,6 +40,8 @@ class TokopediaDpsController extends Controller
 
         // dd($arrayTokped1);
 
+        // dd($arrayTokped1[0][4]);
+
         $resultTokped = array();
 
         foreach($arrayTokped1[0] as $singleData){
@@ -47,6 +49,7 @@ class TokopediaDpsController extends Controller
                 continue;
             }
             $i = 0;
+            $singleData[1] = "$singleData[1]";
             foreach ($resultArray as $cekData){
                 if(strtolower($cekData[4]) == strtolower($singleData[2])){
                     $i = $i + 1;
@@ -58,6 +61,9 @@ class TokopediaDpsController extends Controller
                         }else{
                             $singleData[9] = 'Aktif';
                         }
+                        foreach(explode('.',$singleData[1]) as $row){
+                            $singleData[] = $row;
+                        }
                         $resultTokped[] = $singleData;
                         break;
                     }
@@ -66,6 +72,9 @@ class TokopediaDpsController extends Controller
             if($i == 0 && $singleData[7]){
                 $singleData[9] = 'Nonaktif';
                 $singleData[7] = '0';
+                foreach(explode('.',$singleData[1]) as $row){
+                    $singleData[] = $row;
+                }
                 $resultTokped[] = $singleData;
             }
         }
@@ -81,6 +90,7 @@ class TokopediaDpsController extends Controller
                 continue;
             }
             $i = 0;
+            $singleData[1] = "$singleData[1]";
             foreach ($resultArray as $cekData){
                 if(strtolower($cekData[4]) == strtolower($singleData[2])){
                     $i = $i + 1;
@@ -91,6 +101,9 @@ class TokopediaDpsController extends Controller
                         }else{
                             $singleData[9] = 'Aktif';
                         }
+                        foreach(explode('.',$singleData[1]) as $row){
+                            $singleData[] = $row;
+                        }
                         $resultTokped[] = $singleData;
                         break;
                     }
@@ -99,6 +112,9 @@ class TokopediaDpsController extends Controller
             if($i == 0 && $singleData[7]){
                 $singleData[9] = 'Nonaktif';
                 $singleData[7] = '0';
+                foreach(explode('.',$singleData[1]) as $row){
+                    $singleData[] = $row;
+                }
                 $resultTokped[] = $singleData;
             }
         }

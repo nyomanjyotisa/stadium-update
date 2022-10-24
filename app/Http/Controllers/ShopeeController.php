@@ -183,6 +183,8 @@ class ShopeeController extends Controller
     }
 
     public function update_stok(){
+        
+        // baca input user file export qasir gyr
         $path1 = request()->file('qasir_gyr')->store('temp'); 
         $path = storage_path('app').'/'.$path1;  
         $arrayGyr = Excel::toArray(new QasirDataGyrImport,$path);
@@ -204,6 +206,7 @@ class ShopeeController extends Controller
             $resultArray[] = $singleGyrArray;
         }
 
+        // baca input user file export qasir dps
         $pathDps = request()->file('qasir_dps')->store('temp'); 
         $path2Dps = storage_path('app').'/'.$pathDps;  
         $arrayDps = Excel::toArray(new QasirDataGyrImport,$path2Dps);
@@ -233,17 +236,24 @@ class ShopeeController extends Controller
             if(str_contains($singleData[0], 'et_title_product_id') || str_contains($singleData[0], 'sales_info') || $singleData[0] == null || $singleData[0] == 'Kode Produk'){
                 continue;
             }
+
+            $i = 0;
             $singleData[3] = ltrim($singleData[3]);
             $singleData[] = $singleData[1] . $singleData[3];
 
             foreach ($resultArray as $cekData){
                 if($cekData[4] == $singleData[26]){
+                    $i = $i + 1;
                     if($cekData[3] != $singleData[7]){
                         $singleData[7] = $cekData[3];
                         $resultShopee[] = $singleData;
                         break;
                     }
                 }                
+            }
+            if($i == 0 && $singleData[7]){
+                $singleData[7] = '0';
+                $resultShopee[] = $singleData;
             }
         }
 
@@ -255,17 +265,25 @@ class ShopeeController extends Controller
             if(str_contains($singleData[0], 'et_title_product_id') || str_contains($singleData[0], 'sales_info') || $singleData[0] == null || $singleData[0] == 'Kode Produk'){
                 continue;
             }
+
+            $i = 0;
             $singleData[3] = ltrim($singleData[3]);
             $singleData[] = $singleData[1] . $singleData[3];
 
             foreach ($resultArray as $cekData){
                 if($cekData[4] == $singleData[26]){
+                    $i = $i + 1;
                     if($cekData[3] != $singleData[7]){
                         $singleData[7] = $cekData[3];
                         $resultShopee[] = $singleData;
                         break;
                     }
                 }
+            }
+            
+            if($i == 0 && $singleData[7]){
+                $singleData[7] = '0';
+                $resultShopee[] = $singleData;
             }
         }
 
