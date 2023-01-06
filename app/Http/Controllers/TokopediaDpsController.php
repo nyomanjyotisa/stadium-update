@@ -48,18 +48,24 @@ class TokopediaDpsController extends Controller
             if($singleData[11] == null){
                 continue;
             }
+            if($singleData[0] == "Error Message"){
+                continue;
+            }
+            if(str_contains($singleData[0], 'Abaikan kolom ini')){
+                continue;
+            }
             $i = 0;
             $singleData[1] = "$singleData[1]";
             foreach ($resultArray as $cekData){
                 if(strtolower($cekData[4]) == strtolower($singleData[2])){
                     $i = $i + 1;
-                    if($cekData[3] != $singleData[7]){
-                        $singleData[7] = $cekData[3];
+                    if($cekData[3] != $singleData[8]){
+                        $singleData[8] = $cekData[3];
                         if($cekData[3] < 1){
-                            $singleData[9] = 'Nonaktif';
-                            $singleData[7] = '0';
+                            $singleData[11] = 'Nonaktif';
+                            $singleData[8] = '0';
                         }else{
-                            $singleData[9] = 'Aktif';
+                            $singleData[11] = 'Aktif';
                         }
                         foreach(explode('.',$singleData[1]) as $row){
                             $singleData[] = $row;
@@ -69,9 +75,9 @@ class TokopediaDpsController extends Controller
                     }
                 }
             }
-            if($i == 0 && $singleData[7]){
-                $singleData[9] = 'Nonaktif';
-                $singleData[7] = '0';
+            if($i == 0 && $singleData[8]){
+                $singleData[11] = 'Nonaktif';
+                $singleData[8] = '0';
                 foreach(explode('.',$singleData[1]) as $row){
                     $singleData[] = $row;
                 }
@@ -89,17 +95,23 @@ class TokopediaDpsController extends Controller
             if($singleData[11] == null){
                 continue;
             }
+            if($singleData[0] == "Error Message"){
+                continue;
+            }
+            if(str_contains($singleData[0], 'Abaikan kolom ini')){
+                continue;
+            }
             $i = 0;
             $singleData[1] = "$singleData[1]";
             foreach ($resultArray as $cekData){
                 if(strtolower($cekData[4]) == strtolower($singleData[2])){
                     $i = $i + 1;
-                    if($cekData[3] != $singleData[7]){
-                        $singleData[7] = $cekData[3];
+                    if($cekData[3] != $singleData[8]){
+                        $singleData[8] = $cekData[3];
                         if($cekData[3] < 1){
-                            $singleData[9] = 'Nonaktif';
+                            $singleData[11] = 'Nonaktif';
                         }else{
-                            $singleData[9] = 'Aktif';
+                            $singleData[11] = 'Aktif';
                         }
                         foreach(explode('.',$singleData[1]) as $row){
                             $singleData[] = $row;
@@ -109,9 +121,9 @@ class TokopediaDpsController extends Controller
                     }
                 }
             }
-            if($i == 0 && $singleData[7]){
-                $singleData[9] = 'Nonaktif';
-                $singleData[7] = '0';
+            if($i == 0 && $singleData[8]){
+                $singleData[11] = 'Nonaktif';
+                $singleData[8] = '0';
                 foreach(explode('.',$singleData[1]) as $row){
                     $singleData[] = $row;
                 }
@@ -167,22 +179,22 @@ class TokopediaDpsController extends Controller
             foreach ($resultArray as $cekData){
                 if(strtolower($cekData[4]) == strtolower($singleData[2])){
                     $i = $i + 1;
-                    if($cekData[3] != $singleData[7]){
-                        $singleData[7] = $cekData[3];
+                    if($cekData[3] != $singleData[8]){
+                        $singleData[8] = $cekData[3];
                         if($cekData[3] < 1){
-                            $singleData[9] = 'Nonaktif';
-                            $singleData[7] = '0';
+                            $singleData[11] = 'Nonaktif';
+                            $singleData[8] = '0';
                         }else{
-                            $singleData[9] = 'Aktif';
+                            $singleData[11] = 'Aktif';
                         }
                         $resultTokped[] = $singleData;
                         break;
                     }
                 }
             }
-            if($i == 0 && $singleData[7]){
-                $singleData[9] = 'Nonaktif';
-                $singleData[7] = '0';
+            if($i == 0 && $singleData[8]){
+                $singleData[11] = 'Nonaktif';
+                $singleData[8] = '0';
                 $resultTokped[] = $singleData;
             }
         }
@@ -201,21 +213,21 @@ class TokopediaDpsController extends Controller
             foreach ($resultArray as $cekData){
                 if(strtolower($cekData[4]) == strtolower($singleData[2])){
                     $i = $i + 1;
-                    if($cekData[3] != $singleData[7]){
-                        $singleData[7] = $cekData[3];
+                    if($cekData[3] != $singleData[8]){
+                        $singleData[8] = $cekData[3];
                         if($cekData[3] < 1){
-                            $singleData[9] = 'Nonaktif';
+                            $singleData[11] = 'Nonaktif';
                         }else{
-                            $singleData[9] = 'Aktif';
+                            $singleData[11] = 'Aktif';
                         }
                         $resultTokped[] = $singleData;
                         break;
                     }
                 }
             }
-            if($i == 0 && $singleData[7]){
-                $singleData[9] = 'Nonaktif';
-                $singleData[7] = '0';
+            if($i == 0 && $singleData[8]){
+                $singleData[11] = 'Nonaktif';
+                $singleData[8] = '0';
                 $resultTokped[] = $singleData;
             }
         }
@@ -300,22 +312,22 @@ class TokopediaDpsController extends Controller
             foreach ($resultArray as $cekData){
                 if(strtolower($cekData[4]) == strtolower($singleData[2])){
                     $i = $i + 1;
-                    if($cekData[3] != $singleData[7]){
-                        $singleData[7] = $cekData[3];
+                    if($cekData[3] != $singleData[8]){
+                        $singleData[8] = $cekData[3];
                         if($cekData[3] < 1){
-                            $singleData[9] = 'Nonaktif';
-                            $singleData[7] = '0';
+                            $singleData[11] = 'Nonaktif';
+                            $singleData[8] = '0';
                         }else{
-                            $singleData[9] = 'Aktif';
+                            $singleData[11] = 'Aktif';
                         }
                         $resultTokped[] = $singleData;
                         break;
                     }
                 }
             }
-            if($i == 0 && $singleData[7]){
-                $singleData[9] = 'Nonaktif';
-                $singleData[7] = '0';
+            if($i == 0 && $singleData[8]){
+                $singleData[11] = 'Nonaktif';
+                $singleData[8] = '0';
                 $resultTokped[] = $singleData;
             }
         }
@@ -334,21 +346,21 @@ class TokopediaDpsController extends Controller
             foreach ($resultArray as $cekData){
                 if(strtolower($cekData[4]) == strtolower($singleData[2])){
                     $i = $i + 1;
-                    if($cekData[3] != $singleData[7]){
-                        $singleData[7] = $cekData[3];
+                    if($cekData[3] != $singleData[8]){
+                        $singleData[8] = $cekData[3];
                         if($cekData[3] < 1){
-                            $singleData[9] = 'Nonaktif';
+                            $singleData[11] = 'Nonaktif';
                         }else{
-                            $singleData[9] = 'Aktif';
+                            $singleData[11] = 'Aktif';
                         }
                         $resultTokped[] = $singleData;
                         break;
                     }
                 }
             }
-            if($i == 0 && $singleData[7]){
-                $singleData[9] = 'Nonaktif';
-                $singleData[7] = '0';
+            if($i == 0 && $singleData[8]){
+                $singleData[11] = 'Nonaktif';
+                $singleData[8] = '0';
                 $resultTokped[] = $singleData;
             }
         }

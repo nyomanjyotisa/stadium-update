@@ -28,17 +28,17 @@
             <form method="post" action="/tokopedia/dps/variasi_baru" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 
-                <label>Pilih file excel Qasir DPS</label>
+                <label>Pilih file excel Qasir DPS atau GYR</label>
                 <div class="form-group">
                     <input type="file" name="qasir_dps" required="required">
                 </div>
                 <br><br><br>
                 
-                <label>Dari Tokped Dps 1</label>
+                <label>Dari Tokped Dps/Gyr 1</label>
                 <div class="form-group">
                     <input type="file" name="tokped1" required="required">
                 </div><br>
-                <label>Dari Tokped Dps 2</label>
+                <label>Dari Tokped Dps/Gyr 2</label>
                 <div class="form-group">
                     <input type="file" name="tokped2" required="required">
                 </div><br>

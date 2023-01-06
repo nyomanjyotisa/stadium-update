@@ -23,7 +23,7 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
                 <a class="btn btn-info" href="#" role="button">Shopee</a>
                 <br><br>
                 <a class="btn btn-secondary" href="/shopee/updatestok" role="button">Update Stok</a>
@@ -32,8 +32,8 @@
                 <br><br>
                 <a class="btn btn-secondary" href="/shopee/produkbaru" role="button">Produk Baru</a>
             </div>
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <a class="btn btn-info" href="#" role="button">Tokopedia Denpasar</a>
+            <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+                <a class="btn btn-info" href="#" role="button">Tokopedia</a>
                 <br><br>
                 <a class="btn btn-secondary" href="/tokopedia/dps/updatestok" role="button">Update Stok</a>
                 <br><br>
@@ -41,7 +41,7 @@
                 <br><br>
                 <a class="btn btn-secondary" href="/tokopedia/dps/produkbaru" role="button">Produk Baru</a>
             </div>
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            <!-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <a class="btn btn-info" href="#" role="button">Tokopedia Gianyar</a>
                 <br><br>
                 <a class="btn btn-secondary" href="/tokopedia/gyr/updatestok" role="button">Update Stok</a>
@@ -49,7 +49,7 @@
                 <a class="btn btn-secondary" href="/tokopedia/gyr/variasibaru" role="button">Variasi Baru</a>
                 <br><br>
                 <a class="btn btn-secondary" href="/tokopedia/gyr/produkbaru" role="button">Produk Baru</a>
-            </div>
+            </div> -->
         </div>
     </body>
 </html>
