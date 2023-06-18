@@ -40,17 +40,14 @@
                 </div>
                 <br><br><br>
                 
-                <label>Dari Shopee 1</label>
+                <label>Dari Shopee</label>
                 <div class="form-group">
                     <input type="file" name="shopee1" required="required">
                 </div><br>
-                <label>Dari Shopee 2</label>
+
+                <label>Data Gambar Produk Qasir</label>
                 <div class="form-group">
-                    <input type="file" name="shopee2" required="required">
-                </div><br>
-                <label>Dari Shopee 3</label>
-                <div class="form-group">
-                    <input type="file" name="shopee3" required="required">
+                    <input type="file" name="gambar_qasir" required="required">
                 </div><br>
                 <button type="submit" class="btn btn-primary">Import</button>
 			</form>
