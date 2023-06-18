@@ -48,7 +48,7 @@ class TokopediaDpsController extends Controller
             if($singleData[11] == null){
                 continue;
             }
-            if($singleData[0] == "Error Message"){
+            if($singleData[0] == "Error Message" || $singleData[0] == "Pesan Error" ){
                 continue;
             }
             if(str_contains($singleData[0], 'Abaikan kolom ini')){
@@ -95,7 +95,7 @@ class TokopediaDpsController extends Controller
             if($singleData[11] == null){
                 continue;
             }
-            if($singleData[0] == "Error Message"){
+            if($singleData[0] == "Error Message" || $singleData[0] == "Pesan Error" ){
                 continue;
             }
             if(str_contains($singleData[0], 'Abaikan kolom ini')){
@@ -110,6 +110,7 @@ class TokopediaDpsController extends Controller
                         $singleData[8] = $cekData[3];
                         if($cekData[3] < 1){
                             $singleData[11] = 'Nonaktif';
+                            $singleData[8] = '0';
                         }else{
                             $singleData[11] = 'Aktif';
                         }
