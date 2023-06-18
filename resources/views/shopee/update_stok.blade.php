@@ -39,22 +39,14 @@
                 </div>
                 <br><br><br>
                 
-                <label>Shopee Pending Order</label>
+                <!-- <label>Shopee Pending Order</label>
                 <div class="form-group">
                     <input type="file" name="shopee_pending" required="required">
                 </div>
-                <br><br>
-                <label>Dari Shopee 1</label>
+                <br><br> -->
+                <label>Dari Shopee</label>
                 <div class="form-group">
                     <input type="file" name="shopee1" required="required">
-                </div><br>
-                <label>Dari Shopee 2</label>
-                <div class="form-group">
-                    <input type="file" name="shopee2" required="required">
-                </div><br>
-                <label>Dari Shopee 3</label>
-                <div class="form-group">
-                    <input type="file" name="shopee3">
                 </div><br>
                 <button type="submit" class="btn btn-primary">Import</button>
 			</form>
